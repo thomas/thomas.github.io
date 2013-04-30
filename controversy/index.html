@@ -165,7 +165,7 @@
               <li>Too many lines of test code per line covered.</li>
               <li>Too coupled to implementation.</li>
               <li>Creates too much maintenance.</li>
-              <li>Creates too many bugs.</li>
+              <li>Fails to ensure you are <em>using</em> classes correctly.</li>
             </ul>
           </section>
 					<section>
@@ -184,6 +184,7 @@
           <section>
             <h1>Use TDD if it works for you</h1>
             <h2>But please delete your unit tests</h2>
+            <h3>(After you replace them with...)</h3>
           </section>
           <section>
             <h1>Integration Tests</h1>
@@ -408,7 +409,7 @@ end
 					<section>
 						<h2>Testing a Presenter:</h2>
 <pre><code>subscription = Factory.new(:subscription)
-presenter    = SubscriptionPresenter.new(subscription)
+presenter    = SubscriptionPresenter.new(subscription.id)
 
 assert_equal subscription.name, @presenter.name
 assert_equal "1/1/2014", @presenter.expiration_date
